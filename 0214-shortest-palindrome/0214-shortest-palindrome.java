@@ -1,13 +1,21 @@
 class Solution {
     public String shortestPalindrome(String s) {
-        int i = 0, end = s.length() - 1, j = end; char chs[] = s.toCharArray();
-    while(i < j) {
-         if (chs[i] == chs[j]) {
-             i++; j--;
-         } else { 
-             i = 0; end--; j = end;
-         }
+        int i=0; 
+    int j=s.length()-1;
+ 
+    while(j>=0){
+        if(s.charAt(i)==s.charAt(j)){
+            i++;
+        }
+        j--;
     }
-    return new StringBuilder(s.substring(end+1)).reverse().toString() + s;
+ 
+    if(i==s.length())
+        return s;
+ 
+    String suffix = s.substring(i);
+    String prefix = new StringBuilder(suffix).reverse().toString();
+    String mid = shortestPalindrome(s.substring(0, i));
+    return prefix+mid+suffix;
     }
 }
