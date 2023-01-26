@@ -34,6 +34,7 @@ class Solution {
         }
         
         return (int) (Math.log10(num)) + 1;
+        
     }
     
 }
