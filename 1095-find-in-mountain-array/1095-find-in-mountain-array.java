@@ -8,8 +8,9 @@
  */
  
 class Solution {
+    
     public int findInMountainArray(int target, MountainArray mountainArr) {
-        System.out.println(mountainArr.length());
+        
         int peak = peakIndexInMountainArray(mountainArr);
         int firstTry = orderAgnosticBS(mountainArr, target, 0, peak);
         if (firstTry != -1) {
@@ -19,11 +20,6 @@ class Solution {
         }
         
     }
-    
-//     int search (int[] arr, int target) {
-        
-
-//     }
 
     public int peakIndexInMountainArray(MountainArray arr) {
         int start = 0;
