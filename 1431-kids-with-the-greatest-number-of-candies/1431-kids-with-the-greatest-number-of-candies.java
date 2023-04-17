@@ -12,7 +12,7 @@ class Solution {
         }
         
         for (int i = 0; i < candies.length; i++) {
-            int tempCandies = candies[i] += extraCandies;
+            int tempCandies = candies[i] + extraCandies;
             
             if (tempCandies >= max) {
                 list.add(true);
@@ -23,6 +23,9 @@ class Solution {
         }
         
         return list;
+        
+        
+        
         
     }
 }
