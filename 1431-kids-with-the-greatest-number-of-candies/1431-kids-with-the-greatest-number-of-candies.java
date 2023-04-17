@@ -4,15 +4,18 @@ class Solution {
         ArrayList <Boolean> list = new ArrayList<Boolean>();
         
         int max = candies[0];
-        for (int i = 0; i < candies.length; i++) {
+        
+        for (int i = 1; i < candies.length; i++) {
             if (max < candies[i]) {
                 max = candies[i];
             }
         }
         
         for (int i = 0; i < candies.length; i++) {
-            candies[i] += extraCandies;
-            if (candies[i] >= max) {
+            
+            int tempCandies = candies[i] + extraCandies;
+            
+            if (tempCandies >= max) {
                 list.add(true);
             } else {
                 list.add(false);
