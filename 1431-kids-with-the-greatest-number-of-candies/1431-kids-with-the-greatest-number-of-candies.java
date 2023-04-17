@@ -6,21 +6,23 @@ class Solution {
         int max = candies[0];
         
         for (int i = 1; i < candies.length; i++) {
-            if (max < candies[i]) {
+            if (candies[i] > max) {
                 max = candies[i];
             }
         }
         
         for (int i = 0; i < candies.length; i++) {
+            candies[i] += extraCandies;
             
-            int tempCandies = candies[i] + extraCandies;
-            
-            if (tempCandies >= max) {
+            if (candies[i] >= max) {
                 list.add(true);
             } else {
                 list.add(false);
             }
+            
         }
+        
         return list;
+        
     }
 }
